@@ -2,8 +2,8 @@
 import React, {useState} from "react";
 import styled from "styled-components";
 
-import './App.css';
 import { Modal } from "./components/Modal";
+import { GlobalStyle } from "./globalStyles";
 
 
 
@@ -36,10 +36,11 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Peace</h1>
+      <h1 className="welcome">Welcome</h1>
       <Container>
         <Button onClick={modalHandler}>I am a Modal</Button>
         <Modal showModal={showModal} setShowModal={setShowModal}/>
+        <GlobalStyle />
       </Container>
     </div>
   );
