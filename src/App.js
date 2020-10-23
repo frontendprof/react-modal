@@ -1,8 +1,9 @@
 
-import React from "react";
+import React, {useState} from "react";
 import styled from "styled-components";
 
 import './App.css';
+import { Modal } from "./components/Modal";
 
 
 
@@ -10,7 +11,7 @@ const Container=styled.div`
   display:flex;
   justify-content:center;
   align-items:center;
-  height:100vh;
+  height:90vh;
 `
 
 const Button=styled.button`
@@ -25,14 +26,20 @@ const Button=styled.button`
 `
 
 
-
-
 function App() {
+
+  const [showModal,setShowModal]=useState(false);
+
+  const modalHandler=()=>{
+    setShowModal(prev=>!prev);
+  }
+
   return (
     <div className="App">
       <h1>Peace</h1>
       <Container>
-        <Button>I am a Modal</Button>
+        <Button onClick={modalHandler}>I am a Modal</Button>
+        <Modal showModal={showModal} setShowModal={setShowModal}/>
       </Container>
     </div>
   );
