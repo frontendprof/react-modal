@@ -1,5 +1,5 @@
 
-import React, {useState} from "react";
+import React, {useCallback, useState,useEffect} from "react";
 import styled from "styled-components";
 
 import { Modal } from "./components/Modal";
@@ -33,6 +33,21 @@ function App() {
   const modalHandler=()=>{
     setShowModal(prev=>!prev);
   }
+
+
+  const keyPress=useCallback(e=>{
+    if(e.key==="Escape" && showModal){
+      setShowModal(false)
+    }
+  },[setShowModal,showModal])
+  
+
+  useEffect(()=>{
+    document.addEventListener("keydown",keyPress);
+    return ()=>document.removeEventListener("keydown",keyPress);
+  })
+
+
 
   return (
     <div className="App">
