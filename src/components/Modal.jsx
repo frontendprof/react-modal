@@ -1,5 +1,5 @@
 
-import React, { useRef, useEffect, useCallback } from 'react';
+import React, { useRef } from 'react';
 import {useSpring, animated} from "react-spring";
 import styled from "styled-components";
 import {MdClose} from "react-icons/md";
@@ -21,7 +21,7 @@ const ModalWrapper = styled.div`
   width: 800px;
   height: 500px;
   box-shadow: 0 5px 16px rgba(0, 0, 0, 0.2);
-  background: #ddd;
+  background: #F2F4F3;
   color: #000;
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -44,25 +44,31 @@ const ModalContent = styled.div`
   justify-content: center;
   align-items: center;
   line-height: 1.8;
-  color: #141414;
+  color: #3E7CB1;
   p {
-    margin-bottom: 1rem;
+    margin-bottom: 1.1rem;
   }
   button {
-    padding: 10px 24px;
-    background: #141414;
+    padding: 12px 26px;
+    background: #4C6663;
     color: #fff;
-    border: none;
+    border:none;
+    font-size:1.4rem;
+    border-radius:10px;
+    box-shadow:3px -5px 5px lightblue;
+    cursor:pointer;
+
   }
 `;
 
 const CloseModalButton = styled(MdClose)`
   cursor: pointer;
   position: absolute;
-  top: 20px;
-  right: 20px;
-  width: 32px;
-  height: 32px;
+  top: 30px;
+  right: 30px;
+  width: 60px;
+  height: 60px;
+  color:navy;
   padding: 0;
   z-index: 10;
 `;
