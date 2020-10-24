@@ -36,7 +36,9 @@ function App() {
 
   return (
     <div className="App">
-      <h1 className="welcome">Welcome</h1>
+      {/* <h1 
+      style={{color:"blue",textAlign:"center",fontSize:'3rem',backgroundColor:"yellow"}}
+      >Welcome</h1> */}
       <Container>
         <Button onClick={modalHandler}>I am a Modal</Button>
         <Modal showModal={showModal} setShowModal={setShowModal}/>
